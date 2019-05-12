@@ -2,6 +2,8 @@
 
 Use in unison with the TW AK3W Workshop: https://kafka.troywest.com
 
+This is the full, implemented solution to Number Stations in Java.
+
 # Background
 
 We have captured a mysterious ~3hr broadcast of global Number Station data.
