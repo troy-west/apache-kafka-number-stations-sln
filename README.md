@@ -150,3 +150,33 @@ java -jar target/apache-kafka-java-number-stations-1.0-SNAPSHOT-jar-with-depende
 java -jar target/apache-kafka-java-number-stations-1.0-SNAPSHOT-jar-with-dependencies.jar 8081 &
 
 It's a case for interactive queries!
+
+# Troubleshooting
+
+## Downloading Oracle Java JDK
+
+1. Visit https://www.oracle.com/technetwork/java/javase/downloads/index.html
+2. Download Java SE 11 or above
+
+If you are asked to log in, try downloading one of the newer versions, then you may not need to log in.
+
+## Windows
+
+### Maven
+
+For any of the "mvn" commands below, run the shell snippets from "cmd.exe" rather than PowerShell.
+If you are inside a PowerShell terminal, run "cmd" to get to a simple shell.
+
+### Docker
+
+If you are having problems with docker similar to the following error messages, try restarting docker:
+
+```
+driver failed programming external connectivity on endpoint
+```
+
+or,
+
+```
+input/output error
+```
