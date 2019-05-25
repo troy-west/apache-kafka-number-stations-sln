@@ -10,6 +10,7 @@ import java.util.Map;
 public class JsonSerializer<T> implements Serializer<T> {
 
     private static final Logger logger = LoggerFactory.getLogger(JsonDeserializer.class);
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
     public void configure(Map map, boolean b) {
@@ -18,7 +19,6 @@ public class JsonSerializer<T> implements Serializer<T> {
     @Override
     public byte[] serialize(String topic, T o) {
         byte[] retVal = null;
-        ObjectMapper objectMapper = new ObjectMapper();
         try {
             retVal = objectMapper.writeValueAsBytes(o);
         } catch (Exception e) {

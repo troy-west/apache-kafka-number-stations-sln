@@ -44,8 +44,11 @@ public class Compute {
     }
 
     public static KStream<String, Message> translate(KStream<String, Message> stream) {
+        // Important! We mapValues here rather than map to avoid an uneccessary repartition
         return stream.mapValues(message -> {
             String translated = Translator.translate(message.getType(), message.getContent());
+
+            // Important! We .copy() here because the input message must be considere immutable.
             return message.copy().resetContent(List.of(translated));
         });
     }

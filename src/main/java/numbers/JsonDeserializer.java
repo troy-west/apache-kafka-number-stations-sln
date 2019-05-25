@@ -10,6 +10,7 @@ import java.util.Map;
 public class JsonDeserializer<T> implements Deserializer {
 
     private static final Logger logger = LoggerFactory.getLogger(JsonDeserializer.class);
+    private ObjectMapper mapper = new ObjectMapper();
     private Class<T> type;
 
     public JsonDeserializer(Class<T> type) {
@@ -22,7 +23,6 @@ public class JsonDeserializer<T> implements Deserializer {
 
     @Override
     public T deserialize(String s, byte[] bytes) {
-        ObjectMapper mapper = new ObjectMapper();
         T obj = null;
         try {
             obj = mapper.readValue(bytes, type);
